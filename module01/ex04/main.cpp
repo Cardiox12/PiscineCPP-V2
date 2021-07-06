@@ -18,13 +18,22 @@ replace_all(std::string &source, const std::string &from, const std::string &to)
 
 void
 sed_improved(std::string filename, std::string s1, std::string s2){
-	std::string outfilename = filename + std::string(FILE_POSTFIX);
-	std::ifstream file( filename.c_str(), std::ifstream::out );
-	std::ofstream outfile( outfilename.c_str(), std::ios::app );
 
-	for ( std::string line ; std::getline( file, line ) ; ){
-		replace_all( line, s1, s2 );
-		outfile << line << std::endl;
+	if ( filename.length() == 0 || s1.length() == 0 || s2.length() == 0 ){
+		std::cerr << "Error: parameter cannot be empty" << std::endl;
+	} else {
+		std::string outfilename = filename + std::string(FILE_POSTFIX);
+		std::ifstream file( filename.c_str(), std::ifstream::out );
+		std::ofstream outfile( outfilename.c_str(), std::ios::app );
+
+		if ( file.fail() ){
+			std::cerr << "Error: File does not exists" << std::endl;
+		} else {
+			for ( std::string line ; std::getline( file, line ) ; ){
+				replace_all( line, s1, s2 );
+				outfile << line << std::endl;
+			}
+		}
 	}
 }
 
