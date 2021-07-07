@@ -1,7 +1,7 @@
 CC		= clang++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98
-NAME	= sed_improved 
-SRCS	= main.cpp
+CFLAGS	= -Wall -Werror -Wextra -std=c++98 
+NAME	= karenFilter 
+SRCS	= main.cpp Karen.cpp
 
 all: $(NAME)
 
