@@ -18,7 +18,7 @@ static const LogDict DEFAULT_QUOTE = {
 static const LogDict KAREN_QUOTES[KAREN_QUOTES_SIZE] = {
 	{
 		"TRACE",
-		"I'be been waiting for 15 minutes!"
+		"I've been waiting for 15 minutes!"
 	}, 
 	{
 		"DEBUG",
