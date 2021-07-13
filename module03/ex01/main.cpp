@@ -15,5 +15,6 @@ int     main(void) {
     alpha.takeDamage(5);
     alpha.beRepaired(5);
 
+	beta.guardGate();
     return (0);
 }
