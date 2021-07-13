@@ -10,5 +10,7 @@ int		main(void){
 	ClapTrap beta("Beta");
 	ClapTrap gamma(beta);
 	beta = alpha;
+
+	beta.attack("Alpha");
 	return (0);
 }
