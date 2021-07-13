@@ -34,10 +34,16 @@ ScavTrap::attack( std::string const &name ){
 
 void
 ScavTrap::takeDamage( unsigned int amount ) {
+	unsigned int new_energy_points = getEnergyPoints() - amount;
+
 	std::cout << "ScavTrap: " << getName() << " takes " << amount << " damages" << std::endl;
+	if ( new_energy_points < 0 )
+		setEnergyPoints(0);
+	setEnergyPoints(new_energy_points);
 }
 
 void
 ScavTrap::beRepaired( unsigned int amount ) {
 	std::cout << "ScavTrap: " << getName() << " being repaired with " << amount << " energy point." << std::endl;
+	setEnergyPoints(amount);
 }
