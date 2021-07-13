@@ -1,8 +1,8 @@
 CC		= clang++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
-NAME	= ClapTrap 
+NAME	= ClapTrap
 SRCS	= main.cpp \
-		  ClapTrap.cpp
+			ClapTrap.cpp
 
 all: $(NAME)
 

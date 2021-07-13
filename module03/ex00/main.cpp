@@ -1,25 +1,14 @@
 #include "ClapTrap.hpp"
 
-int     main(void) {
-    ClapTrap alpha("Alpha");
-    ClapTrap beta("Beta");
-    ClapTrap alpha_copy = alpha;
-    ClapTrap beta_copy(beta);
+int		main(void){
+	ClapTrap alpha("Alpha");
 
-    alpha.attack("Beta");
-    alpha.takeDamage(5);
-    alpha.beRepaired(5);
+	alpha.attack("Beta");
+	alpha.beRepaired(10);
+	alpha.takeDamage(20);
 
-    beta.attack("Alpha");
-    beta.takeDamage(5);
-    beta.beRepaired(10);
-
-    alpha_copy.attack("Beta-Copy");
-    alpha_copy.takeDamage(5);
-    alpha_copy.beRepaired(10);
-
-    beta_copy.attack("Alpha-Copy");
-    beta_copy.takeDamage(5);
-    beta_copy.beRepaired(10);
-    return (0);
+	ClapTrap beta("Beta");
+	ClapTrap gamma(beta);
+	beta = alpha;
+	return (0);
 }
