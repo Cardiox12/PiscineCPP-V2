@@ -10,6 +10,10 @@ class ScavTrap : public ClapTrap {
 		~ScavTrap();
 		ScavTrap& operator=( ScavTrap const &other );
 
-	private:
-
+		void guardGate();
+		void attack( std::string const &target );
+		void takeDamage( unsigned int amount );
+		void beRepaired( unsigned int amount );
 };
+
+#endif
