@@ -13,7 +13,7 @@ ClapTrap::ClapTrap( const ClapTrap &other ){
 	m_hit_points = other.m_hit_points;
 	m_energy_point = other.m_energy_point;
 	m_attack_damage = other.m_attack_damage;
-	std::cout << "ClapTrap: " << m_name << " is alive thanks to other!" << std::endl;
+	std::cout << "ClapTrap: " << m_name << " copy is alive!" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
@@ -24,7 +24,7 @@ ClapTrap&
 ClapTrap::operator=( const ClapTrap &other ) {
 	if (this != &other)
 		*this = other;
-	std::cout << "ClapTrap: " << m_name << " is alive thanks to other!" << std::endl;
+	std::cout << "ClapTrap: " << m_name << " assignation is alive!" << std::endl;
 	return *this;
 }
 
