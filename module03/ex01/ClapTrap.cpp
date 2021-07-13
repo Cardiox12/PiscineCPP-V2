@@ -22,7 +22,7 @@ ClapTrap::~ClapTrap() {
 
 ClapTrap&
 ClapTrap::operator=( const ClapTrap &other ) {
-	if (this != &other)
+	if (this == &other)
 		*this = other;
 	std::cout << m_name << " is alive thanks to other!" << std::endl;
 	return *this;
@@ -47,4 +47,38 @@ void
 ClapTrap::beRepaired( unsigned int amount ) {
 	std::cout << m_name << " is being repaired with " << amount << " amounts of energy points." << std::endl;
 	m_energy_point += amount;
+}
+
+/* ----------------- Getters ----------------- */
+
+const std::string &ClapTrap::getName() const {
+	return m_name;
+}
+
+void ClapTrap::setName( std::string new_name ){
+	m_name = new_name;
+}
+
+int ClapTrap::getHitPoints() const {
+	return m_hit_points;
+}
+
+void ClapTrap::setHitPoints( int hit_points ) {
+	m_hit_points = hit_points;
+}
+
+int ClapTrap::getEnergyPoints() const {
+	return m_energy_point;
+}
+
+void ClapTrap::setEnergyPoints( int energy_points ) {
+	m_energy_point = energy_points;
+}
+
+int ClapTrap::getAttackDamage() const {
+	return m_attack_damage;
+}
+
+void ClapTrap::setAttackDamage( int attack_damage ) {
+	m_attack_damage = attack_damage;
 }
