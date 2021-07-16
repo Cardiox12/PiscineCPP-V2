@@ -1,9 +1,10 @@
 CC		= clang++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
-NAME	= ScavTrap
+NAME	= FragTrap
 SRCS	= main.cpp \
-		ClapTrap.cpp \
-		ScavTrap.cpp
+			ClapTrap.cpp \
+			ScavTrap.cpp \
+			FragTrap.cpp 
 
 all: $(NAME)
 
