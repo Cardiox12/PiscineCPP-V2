@@ -2,9 +2,11 @@ CC		= clang++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 NAME	= Animal
 SRCS	= main.cpp \
-			Animal.cpp \
 			Dog.cpp \
-			Cat.cpp
+			Cat.cpp \
+			Animal.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp
 
 all: $(NAME)
 

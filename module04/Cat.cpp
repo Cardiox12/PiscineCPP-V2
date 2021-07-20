@@ -1,20 +1,19 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal() {
-	m_type = "Cat";
-}
+Cat::Cat() : Animal( "Cat", "", 0 ) {}
 
-Cat::Cat(const Cat &src) : Animal( src ) {}
+Cat::Cat( std::string _name, int _age ) : Animal( "Cat", _name, _age ) {}
+
+Cat::Cat(const Cat &src) : Animal(src) {}
 
 Cat::~Cat() {};
 
 Cat&
 Cat::operator=(const Cat &src) {
-    if (this == &src){
-        return *this;
-	}
+	if (this == &src)
+		return *this;
 	Animal::operator=(src);
-    return (*this);
+	return (*this);
 }
 
 void
