@@ -3,6 +3,7 @@
 
 # include "AMateria.hpp"
 # include <string>
+# include <iostream>
 
 class Cure : public AMateria {
 	public:

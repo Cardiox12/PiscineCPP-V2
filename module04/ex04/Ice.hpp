@@ -3,8 +3,9 @@
 
 # include "AMateria.hpp"
 # include <string>
+# include <iostream>
 
-class Ice {
+class Ice : public AMateria {
 	public:
 		Ice();
 		virtual ~Ice();

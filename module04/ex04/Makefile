@@ -1,12 +1,9 @@
 CC		= clang++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98
+CFLAGS	= -Wall -Werror -Wextra -std=c++98 -g
 NAME	= Materia
 SRCS	= main.cpp \
 			AMateria.cpp \
-			Materia.cpp \
-			ICharacter.cpp \
 			Character.cpp \
-			IMateriaSource.cpp \
 			MateriaSource.cpp \
 			Ice.cpp \
 			Cure.cpp

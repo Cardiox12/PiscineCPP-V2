@@ -6,10 +6,10 @@
 
 # define MATERIA_INVENTORY_SIZE 4
 
+class AMateria;
+
 class ICharacter
 {
-	private:
-		AMateria *m_inventory[MATERIA_INVENTORY_SIZE];
 	public:
 		virtual ~ICharacter() {}
 		virtual std::string const & getName() const = 0;

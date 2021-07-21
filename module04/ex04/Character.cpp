@@ -7,6 +7,8 @@ Character::Character( const std::string &name ) : m_cursor( 0 ), m_name( name ) 
 }
 
 Character::Character(const Character &src) {
+	m_name = src.getName();
+	m_cursor = src.m_cursor;
 	for ( int index = 0 ; index < MATERIA_INVENTORY_SIZE ; index++ ){
 		AMateria *materia = src.m_inventory[index];
 
@@ -26,12 +28,18 @@ Character&
 Character::operator=(const Character &src) {
 	if (this == &src)
 		return *this;
-
+	m_name = src.getName();
+	m_cursor = src.m_cursor;
 	for ( int index = 0 ; index < src.m_cursor ; index++ ){
 		delete m_inventory[index];
 		m_inventory[index] = src.m_inventory[index]->clone();
 	}
 	return (*this);
+}
+
+std::string const& 
+Character::getName() const {
+	return m_name;
 }
 
 void 
