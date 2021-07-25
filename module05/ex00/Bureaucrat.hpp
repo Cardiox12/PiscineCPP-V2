@@ -1,6 +1,7 @@
 #ifndef Bureaucrat_HPP
 # define Bureaucrat_HPP
 
+# include <iostream>
 # include <string>
 # include <stdexcept>
 
@@ -24,16 +25,14 @@ class Bureaucrat {
 		void decGrade();
 
 		struct GradeTooHighException : public std::exception {
-			virtual const char *what() const throw() {
-				return "Grade too high";
-			}
+			virtual const char *what() const throw();
 		};
 
 		struct GradeTooLowException : public std::exception {
-			virtual const char *what() const throw() {
-				return "Grade too low";
-			}
+			virtual const char *what() const throw();
 		};
 };
+
+std::ostream &operator<<( std::ostream &os, const Bureaucrat &bureaucrat );
 
 #endif

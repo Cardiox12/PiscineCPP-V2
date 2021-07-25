@@ -5,6 +5,9 @@ int		main(void){
 	Bureaucrat a("A", 1);
 	Bureaucrat d("D", 150);
 
+
+	std::cout << a << std::endl;
+	std::cout << d << std::endl;
 	try {
 		a.incGrade();
 	} catch ( std::exception &e ){

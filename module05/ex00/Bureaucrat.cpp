@@ -34,8 +34,7 @@ Bureaucrat::is_valid_grade( int note ) const {
 		throw GradeTooLowException();
 }
 
-const std::string&
-Bureaucrat::getName() const {
+const std::string& Bureaucrat::getName() const {
 	return m_name;
 }
 
@@ -62,4 +61,20 @@ Bureaucrat::decGrade() {
 	} catch ( std::exception &e ) {
 		throw;
 	}
+}
+
+const char*
+Bureaucrat::GradeTooHighException::what() const throw() {
+	return "Grade too high";
+}
+
+const char*
+Bureaucrat::GradeTooLowException::what() const throw() {
+	return "Grade too low";
+}
+
+std::ostream&
+operator<<( std::ostream &os, const Bureaucrat &bureaucrat) {
+    os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+    return os;
 }
