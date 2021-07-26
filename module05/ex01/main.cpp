@@ -3,14 +3,15 @@
 
 int		main(void){
 	Bureaucrat bureaucrat("Eddy", 100);
-	Form too_high_form("Form 2B", 10, 10);
-	Form too_low_form("Form 2B", 101, 100);
+	Form too_high_form("Form 0B", 10, 10);
+	Form too_low_form("Form 1B", 101, 100);
 	Form form("Form 2B", 100, 100);
 
 	bureaucrat.signForm( form );
 	bureaucrat.signForm( too_high_form );
 	bureaucrat.signForm( too_low_form );
 
+	std::cout << bureaucrat << std::endl;
 	std::cout << form << std::endl;
 	std::cout << too_high_form << std::endl;
 	std::cout << too_low_form << std::endl;

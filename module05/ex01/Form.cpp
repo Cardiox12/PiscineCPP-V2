@@ -71,9 +71,12 @@ Form::GradeTooLow::what() const throw() {
 
 std::ostream&
 operator<<( std::ostream &os, const Form &form ){
+	const char *is_signed = (form.getSigned()) ? "true" : "false";
+
 	os << "<Form, " << form.getName() 
 		<< ", Sign Grade=" << form.getSignGrade()
 		<< ", Exec Grade=" << form.getExecGrade()
+		<< ", Signed=" << is_signed
 		<< ">";
 	return os;
 }
