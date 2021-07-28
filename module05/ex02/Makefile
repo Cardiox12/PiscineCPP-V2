@@ -5,8 +5,8 @@ SRCS	=	main.cpp \
 			Form.cpp \
 			Bureaucrat.cpp \
 			ShrubberyCreationForm.cpp \
-			PresidentialPardonForm.cpp
-# RobotomyRequestForm.cpp
+			PresidentialPardonForm.cpp \
+			RobotomyRequestForm.cpp
 
 all: $(NAME)
 

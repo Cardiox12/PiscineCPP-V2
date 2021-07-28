@@ -81,6 +81,11 @@ Form::GradeTooLow::what() const throw() {
 	return "Grade too low";
 }
 
+const char*
+Form::FormNotSigned::what() const throw() {
+	return "Form not signed";
+}
+
 std::ostream&
 operator<<( std::ostream &os, const Form &form ){
 	const char *is_signed = (form.getSigned()) ? "true" : "false";

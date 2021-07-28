@@ -40,7 +40,6 @@ ShrubberyCreationForm::execute( const Bureaucrat &executor ) const {
 	} catch ( std::exception &e ){
 		throw;
 	}
-
 	if ( this->getSigned() ){
 		std::string filename = m_target + "_shrubbery";
 		std::ofstream outfile( filename.c_str(), std::ios::app );
@@ -48,5 +47,7 @@ ShrubberyCreationForm::execute( const Bureaucrat &executor ) const {
 		for ( int index = 0; index < 10 ; index++ ){
 			outfile << g_tree[index] << std::endl;
 		}
+	} else {
+		throw FormNotSigned();
 	}
 }

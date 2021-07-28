@@ -29,5 +29,7 @@ PresidentialPardonForm::execute( const Bureaucrat &executor ) const {
 	}
 	if ( this->getSigned() ){
 		std::cout << "Zafod Beeblebrox pardon " << m_target << std::endl;
+	} else {
+		throw FormNotSigned();
 	}
 }
