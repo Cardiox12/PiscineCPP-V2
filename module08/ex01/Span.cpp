@@ -27,7 +27,7 @@ Span::addNumber( int x ) {
 	}
 	m_items.push_back( x );
 }
-#include <iostream>
+
 int
 Span::shortestSpan() {
 	std::size_t size = m_items.size();
