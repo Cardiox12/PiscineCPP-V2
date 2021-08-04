@@ -3,6 +3,8 @@
 
 # include <stdexcept>
 # include <vector>
+# include <cstdlib>
+# include <ctime>
 
 class Span {
 	private:
@@ -17,6 +19,7 @@ class Span {
 		void addNumber( int x );
 		int shortestSpan();
 		int longestSpan();
+		void fill(int min, int max);
 
 		struct IndexExceededException : public std::exception {
 			const char *what() const throw();

@@ -33,6 +33,17 @@ Span::shortestSpan() {
 	if ( size == 0 || size == 1 ){
 		throw SpanNotFoundException();
 	}
+
+	int shortest;
+
+	for ( size_t i = 0 ; i < size ; i++ ){
+		for ( size_t j = 0 ; j < size ; j++ ){
+			if ( i != j ){
+				shortest = std::min(shortest, std::abs( m_items[j] - m_items[i] ));
+			}
+		}
+	}
+	return shortest;
 }
 
 int
@@ -41,6 +52,28 @@ Span::longestSpan() {
 
 	if ( size == 0 || size == 1 ){
 		throw SpanNotFoundException();
+	}
+
+	int longest;
+
+	for ( size_t i = 0 ; i < size ; i++ ){
+		for ( size_t j = 0 ; j < size ; j++ ){
+			if ( i != j ){
+				longest = std::max(longest, std::abs( m_items[j] - m_items[i] ));
+			}
+		}
+	}
+	return longest;
+}
+
+void
+Span::fill(int min, int max) {
+	srand(std::time(NULL));
+
+	m_items.resize(m_max_size);
+
+	for ( std::vector<int>::iterator it = m_items.begin() ; it != m_items.end() ; ++it ){
+		*it = min + rand() % max;
 	}
 }
 
