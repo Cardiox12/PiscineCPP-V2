@@ -1,6 +1,7 @@
 #ifndef Span_HPP
 # define Span_HPP
 
+# include <algorithm>
 # include <stdexcept>
 # include <vector>
 # include <cstdlib>
