@@ -1,7 +1,9 @@
 CC		= clang++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
-NAME	= mutantstack 
-SRCS	= main.cpp
+NAME	= ScavTrap
+SRCS	= main.cpp \
+		ClapTrap.cpp \
+		ScavTrap.cpp
 
 all: $(NAME)
 
