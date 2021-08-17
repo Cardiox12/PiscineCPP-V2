@@ -1,10 +1,12 @@
 #include "Karen.hpp"
 
-int		main( int argc, char *argv[]) {
+int		main(int argc, char *argv[]){
 	Karen karen;
 
 	if ( argc == 2 ){
-		karen.filter( argv[1] );
+		karen.complain( argv[1] );
+	} else {
+		std::cout << "Give log level." << std::endl;
 	}
 	return (0);
 }

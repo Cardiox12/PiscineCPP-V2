@@ -1,6 +1,6 @@
 CC		= clang++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98 
-NAME	= karenFilter 
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
+NAME	= karen 
 SRCS	= main.cpp Karen.cpp
 
 all: $(NAME)

@@ -1,40 +1,45 @@
 #include "Karen.hpp"
 
-Karen::Karen(){}
+const int Karen::CALLBACKS_N = 4;
 
-Karen::~Karen() {}
+Karen::Karen() { }
 
-void
-Karen::print_log( LogDict karen_quote ) {
-	std::cout << "[ " << karen_quote.log_level << " ]" << std::endl;
-	std::cout << karen_quote.quote << std::endl;		
+Karen::~Karen() { }
+
+void 
+Karen::debug( void ){
+	std::cout << "I love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!" << std::endl;
 }
 
-int
-Karen::find_log_level( std::string log_level ) {
-	int index = 0;
+void 
+Karen::info( void ){
+	std::cout << "I cannot believe adding extra bacon cost more money. You don’t put enough! If you did I would not have to ask for it!" << std::endl;
+}
 
-	for ( ; index < KAREN_QUOTES_SIZE ; index++ ){
-		if ( KAREN_QUOTES[ index ].log_level == log_level ){
-			return ( index );
-		}
-	}
-	return (-1);
+void 
+Karen::warning( void ){
+	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming here for years and you just started working here last month." << std::endl;
+}
+
+void 
+Karen::error( void ){
+	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
 void
-Karen::filter( std::string log_level ) {
-	int pos = this->find_log_level( log_level );
-
-	if ( pos < 0 )
-	{
-		this->print_log( DEFAULT_QUOTE );
-	} else {
-		for ( int index = pos ; index < KAREN_QUOTES_SIZE ; index++ ){
-			this->print_log( KAREN_QUOTES[index] );
-			if ( index + 1 != pos && index + 1 != KAREN_QUOTES_SIZE ){
-				std::cout << std::endl;
-			}
+Karen::complain( std::string level ){
+	t_log_pair my_pair[CALLBACKS_N] = {
+		{"DEBUG",	&Karen::debug},
+		{"INFO",	&Karen::info},
+		{"WARNING",	&Karen::warning},
+		{"ERROR",	&Karen::error}
+	};
+	
+	for ( size_t index = 0 ; index < Karen::CALLBACKS_N ; index++ ){
+		if ( my_pair[index].level == level ){
+			std::cout << level << ": ";
+			(this->*my_pair[index].func)();
+			break;
 		}
 	}
 }
