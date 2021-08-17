@@ -1,5 +1,5 @@
 CC		= clang++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98 -g
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
 NAME	= zombie 
 SRCS	= main.cpp \
 	  Zombie.cpp \
