@@ -1,6 +1,6 @@
 CC		= clang++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
-NAME	= sed_improved 
+NAME	= replace 
 SRCS	= main.cpp
 
 all: $(NAME)
