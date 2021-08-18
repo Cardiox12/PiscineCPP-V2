@@ -9,17 +9,13 @@ struct LogDict {
 	std::string quote;
 };
 
-# define KAREN_QUOTES_SIZE 6
+# define KAREN_QUOTES_SIZE 4
 
 static const LogDict DEFAULT_QUOTE = {
 	"Probably complaining about insignificant problems", ""
 };
 
-static const LogDict KAREN_QUOTES[KAREN_QUOTES_SIZE] = {
-	{
-		"TRACE",
-		"I've been waiting for 15 minutes!"
-	}, 
+static const LogDict KAREN_QUOTES[KAREN_QUOTES_SIZE] = { 
 	{
 		"DEBUG",
 		"Do you know how much money I spend here every month?"
@@ -36,11 +32,7 @@ static const LogDict KAREN_QUOTES[KAREN_QUOTES_SIZE] = {
 	{
 		"ERROR",
 		"This is unacceptable, I want to speak to the manager now."
-	}, 
-	{
-		"FATAL",
-		"You are violating my constitutional rights."
-	}	
+	}
 };
 
 class Karen {
