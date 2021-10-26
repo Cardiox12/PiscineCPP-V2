@@ -1,6 +1,6 @@
-CC		= clang++
+CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
-NAME	= zombie-horde 
+NAME	= zombie
 SRCS	= main.cpp \
 	  Zombie.cpp \
 	  ZombieHorde.cpp \
