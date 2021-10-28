@@ -1,5 +1,5 @@
-CC		= clang++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98
+CC		= c++
+CFLAGS	= -g -Wall -Werror -Wextra -std=c++98
 NAME	= fixed 
 SRCS	= main.cpp \
 		  Fixed.cpp
