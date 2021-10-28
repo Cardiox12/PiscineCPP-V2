@@ -85,16 +85,18 @@ Fixed::operator==(const Fixed &b){
 
 Fixed 
 Fixed::operator*(const Fixed &b){
-	int result = ((m_raw_bits * b.getRawBits()) / (0x01 << Fixed::fract_part));
+	// int result = ((m_raw_bits * b.getRawBits()) / (0x01 << Fixed::fract_part));
+	float result = this->toFloat() * b.toFloat();
 
-	return (result);
+	return (Fixed(result));
 }
 
 Fixed 
 Fixed::operator/(const Fixed &b){
-	int result = ((m_raw_bits * (1 << Fixed::fract_part)) / b.getRawBits());
+	// int result = ((m_raw_bits * (1 << Fixed::fract_part)) / b.getRawBits());
+	float result = this->toFloat() / b.toFloat();
 	
-	return (result);
+	return (Fixed(result));
 }
 
 Fixed 
