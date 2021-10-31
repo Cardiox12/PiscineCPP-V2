@@ -71,7 +71,7 @@ void	double_convert( double d ){
 
 void	convert( const char *s ){
 	double				d;
-	static convert_fn	cadbacks[4] = { 
+	static convert_fn	callbacks[4] = { 
 		char_convert, 
 		int_convert, 
 		float_convert,
@@ -84,7 +84,7 @@ void	convert( const char *s ){
 	}
 
 	for ( int index = 0 ; index < 4 ; index++ ){
-		cadbacks[index]( d );
+		callbacks[index]( d );
 	}
 }
 
