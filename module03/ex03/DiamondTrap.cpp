@@ -6,9 +6,9 @@ DiamondTrap::DiamondTrap( std::string name ) :
 	FragTrap( name + "_frag_trap" ),
 	m_name(name)
 {
-	setHitPoints(FragTrap::getHitPoints());
-	setEnergyPoints(ScavTrap::getEnergyPoints());
-	setAttackDamage(FragTrap::getAttackDamage());
+	setHitPoints(100);
+	setEnergyPoints(50);
+	setAttackDamage(30);
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &src) : 

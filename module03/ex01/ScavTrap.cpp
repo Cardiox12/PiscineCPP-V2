@@ -1,7 +1,7 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap( std::string name ) : ClapTrap( name ) {
-	setHitPoints(100)	;
+	setHitPoints(100);
 	setEnergyPoints(50);
 	setAttackDamage(20);
 	std::cout << "ScavTrap: " << getName() << " is alive!" << std::endl;

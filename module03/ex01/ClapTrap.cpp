@@ -24,6 +24,7 @@ ClapTrap::~ClapTrap() {
 
 ClapTrap&
 ClapTrap::operator=(const ClapTrap &src) {
+	std::cout << "ClapTrap: " << m_name << " is alive by assignation!" << std::endl;
 	if (this == &src){
 		return *this;
 	}
@@ -31,7 +32,6 @@ ClapTrap::operator=(const ClapTrap &src) {
 	m_hit_points = src.m_hit_points;
 	m_energy_points = src.m_energy_points;
 	m_attack_damage = src.m_attack_damage;
-	std::cout << "ClapTrap: " << m_name << " is alive by assignation!" << std::endl;
     return (*this);
 }
 

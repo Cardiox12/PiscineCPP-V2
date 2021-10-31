@@ -9,12 +9,12 @@ ClapTrap::ClapTrap( std::string name ) :
 	std::cout << "ClapTrap: " << m_name << " is alive!" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &src) {
-	m_name = src.m_name;
-	m_hit_points = src.m_hit_points;
-	m_energy_points = src.m_energy_points;
-	m_attack_damage = src.m_attack_damage;
-
+ClapTrap::ClapTrap(const ClapTrap &src) :
+	m_name( src.m_name ),
+	m_hit_points( src.m_hit_points ),
+	m_energy_points( src.m_energy_points ),
+	m_attack_damage( src.m_attack_damage )
+{
 	std::cout << "ClapTrap: " << m_name << " is alive by copy!" << std::endl;
 }
 

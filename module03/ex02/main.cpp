@@ -1,20 +1,17 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int		main(void){
 	ClapTrap alpha("Alpha");
 	ScavTrap beta("Beta");
-	ScavTrap beta_assignation = beta;
-	ScavTrap beta_copy(beta);
+	FragTrap gamma("Gamma");
+	FragTrap gamma_assignation("Gamma Assign");
+	
+	gamma_assignation = gamma;
+	gamma.attack("Alpha");
+	gamma_assignation.attack("Beta");
 
-	alpha.attack("Beta");
-	beta.attack("Alpha");
-
-	beta_copy.beRepaired(5);
-	beta_assignation.takeDamage(5);
-
-	beta.guardGate();
-	beta_copy.guardGate();
-	beta_assignation.guardGate();
+	gamma.highFivesGuys();
 	return (0);
 }
