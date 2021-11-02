@@ -1,20 +1,41 @@
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include <iostream>
+#include "IMateriaSource.hpp"
+#include "ICharacter.hpp"
+#include "AMateria.hpp"
+#include "MateriaSource.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "Character.hpp"
 
-int		main(){
-	// const Animal *meta = new Animal(); <- Uncoment this to see the error (abstract class)
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
+int		main(void){
+	IMateriaSource* src = new MateriaSource();
+	AMateria *materia = new Ice();
 
-	std::cout << j->getType() << std::endl;
-	std::cout << i->getType() << std::endl;
+	src->learnMateria(materia);
+	delete materia;
 
-	i->makeSound();
-	j->makeSound();
+	materia = new Cure();
+	src->learnMateria(materia);
+	delete materia;
 
-	// delete meta; 
-	delete i;
-	delete j;
+	ICharacter* me = new Character("me");
+	ICharacter* you = new Character("you");
+
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+
+	*you = *me;
+
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+
+	delete you;
+	delete bob;
+	delete me;
+	delete src;
 	return (0);
 }

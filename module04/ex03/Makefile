@@ -1,13 +1,12 @@
-CC		= clang++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98 -Iincludes -fsanitize=address
-NAME	= Animal
-FILES	= 	Dog.cpp \
-			Cat.cpp \
-			Animal.cpp \
-			Brain.cpp
-
-SRCS  = $(addprefix src/,$(FILES))
-SRCS += main.cpp
+CC		= c++
+CFLAGS	= -Wall -Werror -Wextra -std=c++98 -fsanitize=address
+NAME	= Materia
+SRCS	= main.cpp \
+			AMateria.cpp \
+			Character.cpp \
+			MateriaSource.cpp \
+			Ice.cpp \
+			Cure.cpp
 
 all: $(NAME)
 

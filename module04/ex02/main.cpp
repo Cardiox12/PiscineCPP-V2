@@ -3,7 +3,7 @@
 #include "Dog.hpp"
 
 int		main(){
-	// const Animal *meta = new Animal(); <- Uncoment this to see the error (abstract class)
+	// const Animal *meta = new Animal(); // <- Uncoment this to see the error (abstract class)
 	const Animal *j = new Dog();
 	const Animal *i = new Cat();
 
