@@ -4,5 +4,5 @@ Animal::~Animal() {};
 
 const std::string&
 Animal::getType() const {
-	return this->type;
+	return this->m_type;
 }

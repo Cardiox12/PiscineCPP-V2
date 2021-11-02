@@ -6,7 +6,7 @@
 
 class Animal {
 	protected:
-		std::string type;
+		std::string m_type;
 	public:
 		virtual ~Animal();
 		const std::string &getType() const;
