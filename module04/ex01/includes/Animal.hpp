@@ -6,10 +6,12 @@
 
 class Animal {
 	protected:
-		std::string type;
+		std::string m_type;
+		std::string m_name;
+		int			m_age;
 	public:
 		Animal();
-		Animal( std::string _type );
+		Animal( std::string _type, std::string _name, int _age );
 		virtual ~Animal();
         Animal(const Animal &src);
         Animal &operator=(const Animal &src);

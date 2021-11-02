@@ -1,10 +1,17 @@
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : WrongAnimal( "WrongCat" ) {}
+WrongCat::WrongCat() : WrongAnimal( "WrongCat" ) 
+{
+	std::cout << "Default " << getType() << " constructor." << std::endl;
+}
 
-WrongCat::WrongCat(const WrongCat &src) : WrongAnimal( src ) {}
+WrongCat::WrongCat(const WrongCat &src) : WrongAnimal( src ) {
+	std::cout << "Non default " << getType() << " constructor." << std::endl;
+}
 
-WrongCat::~WrongCat() {};
+WrongCat::~WrongCat() {
+	std::cout << getType() << " destructor." << std::endl;
+}
 
 WrongCat&
 WrongCat::operator=(const WrongCat &src) {

@@ -1,4 +1,4 @@
-CC		= c++
+CC		= clang++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98 -Iincludes -fsanitize=address
 NAME	= Animal
 FILES	= 	Dog.cpp \

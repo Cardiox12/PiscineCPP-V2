@@ -1,12 +1,13 @@
 #include "Dog.hpp"
 
-Dog::Dog() : Animal( "Dog" ), m_brain( new Brain() ) {
+Dog::Dog() : Animal( "Dog", "", 0 ), m_brain( new Brain() ) {
 	std::cout << "Init Dog" << std::endl;
 }
 
 Dog::Dog(const Dog &src) : Animal(src) {
 	std::cout << "Copy Dog" << std::endl;
 	m_brain = new Brain(*src.m_brain);
+	*m_brain = *src.m_brain;
 }
 
 Dog::~Dog() {
@@ -20,8 +21,10 @@ Dog::operator=(const Dog &src) {
 	if (this == &src)
 		return *this;
 	Animal::operator=(src);
-	delete m_brain;
+	Brain *tmp = m_brain;
 	m_brain = new Brain(*src.m_brain);
+	*m_brain = *tmp;
+	delete tmp;
 	return (*this);
 }
 

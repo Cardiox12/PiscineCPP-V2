@@ -1,13 +1,22 @@
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : type( "" ) {}
-WrongAnimal::WrongAnimal( std::string _type ) : type( _type ) {}
+WrongAnimal::WrongAnimal() : type( "" ) {
+	std::cout << "Default " << getType() << " constructor." << std::endl;
+}
+
+WrongAnimal::WrongAnimal( std::string _type ) : type( _type ) 
+{
+	std::cout << "Non default" << getType() << " constructor." << std::endl;
+}
 
 WrongAnimal::WrongAnimal(const WrongAnimal &src) {
+	std::cout << "Copy " << getType() << " constructor." << std::endl;
 	this->type = src.type;
 }
 
-WrongAnimal::~WrongAnimal() {};
+WrongAnimal::~WrongAnimal() {
+	std::cout << getType() << " destructor." << std::endl;
+}
 
 WrongAnimal&
 WrongAnimal::operator=(const WrongAnimal &src) {
