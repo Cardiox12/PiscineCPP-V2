@@ -1,32 +1,32 @@
 #include "Animal.hpp"
-#include "Cat.hpp"
 #include "Dog.hpp"
+#include "Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int		main(){
-	const Animal *meta = new Animal();
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
-	const WrongAnimal *k = new WrongCat();
-	const WrongAnimal *l = new WrongAnimal();
+int     main(){
+    std::cout << "================ Constructors ================" << std::endl;
+    const Animal* meta = new Animal();
+    const Animal* dog = new Dog();
+    const Animal* cat = new Cat();
+    const WrongAnimal *wrong_cat = new WrongCat();
 
-	std::cout << j->getType() << std::endl;
-	std::cout << i->getType() << std::endl;
-	std::cout << k->getType() << std::endl;
+    std::cout << std::endl << "================ Types ================" << std::endl;
 
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
+    std::cout << "Dog type      : " << dog->getType() << " " << std::endl;
+    std::cout << "Cat type      : " << cat->getType() << " " << std::endl;
+    std::cout << "WrongCat type : " << wrong_cat->getType() << " " << std::endl;
 
-	// Wrong method is called here
-	k->makeSound();
-	l->makeSound();
+    std::cout << std::endl << "================ Sounds ================" << std::endl;
+    cat->makeSound(); //will output the cat sound!
+    dog->makeSound();
+    meta->makeSound();
+    wrong_cat->makeSound();
 
-	delete meta;
-	delete i;
-	delete j;
-	delete k;
-	delete l;
-	return (0);
+    std::cout << std::endl << "================ Destructors ================" << std::endl;
+    delete meta;
+    delete cat;
+    delete dog;
+    delete wrong_cat;
+    return (0);
 }

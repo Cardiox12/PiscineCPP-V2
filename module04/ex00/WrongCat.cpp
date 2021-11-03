@@ -1,27 +1,35 @@
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : WrongAnimal( "WrongCat" ) 
-{
-	std::cout << "Default " << getType() << " constructor." << std::endl;
+WrongCat::WrongCat() : WrongAnimal() {
+    m_type = "WrongCat";
+    std::cout << "WrongCat default constructor" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &src) : WrongAnimal( src ) {
-	std::cout << "Non default " << getType() << " constructor." << std::endl;
-}
-
-WrongCat::~WrongCat() {
-	std::cout << getType() << " destructor." << std::endl;
+WrongCat::WrongCat(const WrongCat &other) {
+    m_type = other.m_type;
+    std::cout << "WrongCat copy constructor" << std::endl;
 }
 
 WrongCat&
-WrongCat::operator=(const WrongCat &src) {
-	if (this == &src)
-		return *this;
-	WrongAnimal::operator=(src);
-	return (*this);
+WrongCat::operator=(const WrongCat &other) {
+    if ( &other == this ){
+        return *this;
+    }
+    m_type = other.m_type;
+    std::cout << "WrongCat assignation operator" << std::endl;
+    return *this;
 }
 
-void
+WrongCat::~WrongCat() {
+    std::cout << "WrongCat destructor" << std::endl;
+}
+
+void 
 WrongCat::makeSound() const {
-	std::cout << "WrongCat Meow Meow" << std::endl;
+    std::cout << "Wrong Meow Meow" << std::endl;
+}
+
+const std::string&
+WrongCat::getType() const {
+    return m_type;
 }

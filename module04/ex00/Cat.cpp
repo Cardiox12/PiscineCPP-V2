@@ -1,34 +1,31 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal( "Cat", "", 0 ) 
-{
-	std::cout << "Default " << getType() << " constructor." << std::endl;
+Cat::Cat() : Animal() {
+    m_type = "Cat";
+    std::cout << "Cat default constructor" << std::endl;
 }
 
-Cat::Cat( std::string _name, int _age ) : Animal( "Cat", _name, _age ) 
-{
-	std::cout << "Non default " << getType() << " constructor." << std::endl;
+Cat::Cat(const Cat &other) : Animal() {
+    m_type = other.m_type;
+    std::cout << "Cat copy constructor" << std::endl;
 }
 
-Cat::Cat(const Cat &src) : Animal(src) 
-{
-	std::cout << "Copy " << getType() << " constructor." << std::endl;
-}
-
-Cat::~Cat() 
-{
-	std::cout << getType() << " destructor." << std::endl;
+Cat::~Cat() {
+    std::cout << "Cat destructor" << std::endl;
 }
 
 Cat&
-Cat::operator=(const Cat &src) {
-	if (this == &src)
-		return *this;
-	Animal::operator=(src);
-	return (*this);
+Cat::operator=(const Cat &other) {
+    std::cout << "Cat assignation" << std::endl;
+
+    if ( this == &other ){
+        return *this;
+    }
+    m_type = other.m_type;
+    return *this;
 }
 
-void
+void 
 Cat::makeSound() const {
-	std::cout << "Meow Meow" << std::endl;
+    std::cout << "Meow Meow" << std::endl;
 }
