@@ -18,6 +18,8 @@ Brain::Brain(const Brain &other) {
 
 Brain&
 Brain::operator=(const Brain &other) {
+    std::cout << "Brain assignation" << std::endl;
+    
     if ( &other == this ){
         return *this;
     }
