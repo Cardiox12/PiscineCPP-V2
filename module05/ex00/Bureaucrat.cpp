@@ -16,7 +16,9 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src) {
 	m_grade = src.m_grade;
 }
 
-Bureaucrat::~Bureaucrat() {};
+Bureaucrat::~Bureaucrat() {
+	
+}
 
 Bureaucrat&
 Bureaucrat::operator=(const Bureaucrat &src) {

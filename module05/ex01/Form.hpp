@@ -14,13 +14,13 @@ class Form {
 		const static int	MIN_GRADE;
 		const std::string	m_name;
 		bool				m_signed;
-		int					m_sign_grade;
-		int					m_exec_grade;
+		const int			m_sign_grade;
+		const int			m_exec_grade;
 	public:
-		Form( const std::string name, int sign_grade, int exec_grade );
+		Form( const std::string name, const int sign_grade, const int exec_grade );
 		virtual ~Form();
-        Form(const Form &src);
-        Form &operator=(const Form &src);
+		Form(const Form &src);
+		Form &operator=(const Form &src);
 
 		const std::string &getName() const;
 		bool getSigned() const;

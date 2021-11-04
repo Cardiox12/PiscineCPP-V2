@@ -3,35 +3,34 @@
 const int Form::MAX_GRADE = 1;
 const int Form::MIN_GRADE = 150;
 
-Form::Form( const std::string name, int sign_grade, int exec_grade ) :
+Form::Form( const std::string name, const int sign_grade, const int exec_grade ) :
 	m_name( name ),
-	m_signed( false )
+	m_signed( false ),
+	m_sign_grade( sign_grade ),
+	m_exec_grade( exec_grade )
 {
 	if ( sign_grade < Form::MAX_GRADE || exec_grade < Form::MAX_GRADE ){
 		throw Form::GradeTooHigh();
 	} else if ( sign_grade > Form::MIN_GRADE || exec_grade > Form::MIN_GRADE ){
 		throw Form::GradeTooLow();
 	}
-	m_sign_grade = sign_grade;
-	m_exec_grade = exec_grade;
 }
 
-Form::Form(const Form &src) {
-	m_signed = src.m_signed;
-	m_sign_grade = src.m_sign_grade;
-	m_exec_grade = src.m_sign_grade;
-}
+Form::Form(const Form &src) :
+	m_signed( src.m_signed ),
+	m_sign_grade( src.m_sign_grade ),
+	m_exec_grade( src.m_exec_grade ) { }
 
-Form::~Form() {};
+Form::~Form() {
+	
+}
 
 Form&
 Form::operator=(const Form &src) {
-    if (this == &src)
+	if (this == &src)
 		return (*this);
 	m_signed = src.m_signed;
-	m_sign_grade = src.m_sign_grade;
-	m_exec_grade = src.m_sign_grade;
-    return (*this);
+	return (*this);
 }
 
 void 

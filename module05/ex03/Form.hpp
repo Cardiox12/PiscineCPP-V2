@@ -17,7 +17,7 @@ class Form {
 		int					m_sign_grade;
 		int					m_exec_grade;
 	public:
-		Form( const std::string name, int sign_grade, int exec_grade );
+		Form( const std::string name, const int sign_grade, const int exec_grade );
 		virtual ~Form();
         Form(const Form &src);
         Form &operator=(const Form &src);
