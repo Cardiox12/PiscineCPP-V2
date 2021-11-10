@@ -12,13 +12,11 @@ Bureaucrat::Bureaucrat( const std::string &name, int grade ) : m_name( name ) {
 	}
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &src) {
+Bureaucrat::Bureaucrat(const Bureaucrat &src) : m_name( src.m_name ) {
 	m_grade = src.m_grade;
 }
 
-Bureaucrat::~Bureaucrat() {
-	
-}
+Bureaucrat::~Bureaucrat() { }
 
 Bureaucrat&
 Bureaucrat::operator=(const Bureaucrat &src) {
