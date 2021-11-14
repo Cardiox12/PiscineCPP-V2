@@ -9,7 +9,7 @@ class Array {
 		unsigned int	m_size;
 		T				*m_items;
 	public:
-		Array() : m_size( 0 ), m_items( new T[0]() ) {}
+		Array() : m_size( 0 ), m_items( NULL ) {}
 		Array( unsigned int n ) : m_size( n ), m_items( new T[n]() ) {}
 
 		virtual ~Array() {
