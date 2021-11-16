@@ -2,32 +2,32 @@
 #include "mutantstack.hpp"
 
 int	main(void){
-  MutantStack<int> mstack;
-    mstack.push(5);
-    mstack.push(17);
+	MutantStack<int> my_stack;
 
-    std::cout << "Top : " << mstack.top() << std::endl;
-    mstack.pop();
+	for ( int index = 0 ; index < 10 ; index++ ){
+		my_stack.push( index + 1 );
+	}
 
-    std::cout << "Size : " << mstack.size() << std::endl;
+	std::cout << "Top : " << my_stack.top() << std::endl;
+	std::cout << "Size : " << my_stack.size() << std::endl;
 
-    mstack.push(3);
-    mstack.push(5);
-    mstack.push(737);
-    //[...]
+	for ( int index = 15 ; index < 20 ; index++ ){
+		my_stack.push( index );
+	}
 
-    mstack.push(0);
+	MutantStack<int>::iterator it = my_stack.begin();
+	++it;
+	--it;
 
-    MutantStack<int>::iterator it = mstack.begin();
-    MutantStack<int>::iterator ite = mstack.end();
-    ++it;
-    --it;
+	for ( ; it != my_stack.end() ; ++it ){
+		std::cout << "Item : " << *it << std::endl;
+	}
 
-    while (it != ite)
-    {
-        std::cout << "Item : " << *it << std::endl;
-        ++it;
-    }
-    std::stack<int> s(mstack);
-    return (0);
+	std::stack<int> s(my_stack);
+
+	while ( !s.empty() ){
+		std::cout << "S item : " << s.top() << std::endl;
+		s.pop();
+	}
+	return (0);
 }
